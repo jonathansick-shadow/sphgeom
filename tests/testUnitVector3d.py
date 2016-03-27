@@ -8,6 +8,7 @@ from lsst.sphgeom import Angle, LonLat, UnitVector3d, Vector3d
 
 
 class UnitVector3dTestCase(unittest.TestCase):
+
     def testConstruction(self):
         v = Vector3d(1, 1, 1)
         u = UnitVector3d.orthogonalTo(v)
@@ -74,6 +75,7 @@ class UnitVector3dTestCase(unittest.TestCase):
 
 def suite():
     return unittest.makeSuite(UnitVector3dTestCase)
+
 
 def run(shouldExit=False):
     status = 0 if unittest.TextTestRunner().run(suite()).wasSuccessful() else 1

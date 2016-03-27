@@ -7,6 +7,7 @@ from lsst.sphgeom import Interval1d, CONTAINS, DISJOINT, WITHIN
 
 
 class Interval1dTestCase(unittest.TestCase):
+
     def testConstruction(self):
         i = Interval1d(1)
         self.assertEqual(i.getA(), i.getB())
@@ -67,6 +68,7 @@ class Interval1dTestCase(unittest.TestCase):
 
 def suite():
     return unittest.makeSuite(Interval1dTestCase)
+
 
 def run(shouldExit=False):
     status = 0 if unittest.TextTestRunner().run(suite()).wasSuccessful() else 1

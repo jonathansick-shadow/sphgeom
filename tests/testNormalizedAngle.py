@@ -7,6 +7,7 @@ from lsst.sphgeom import Angle, LonLat, NormalizedAngle, UnitVector3d
 
 
 class NormalizedAngleTestCase(unittest.TestCase):
+
     def testConstruction(self):
         a1 = NormalizedAngle(1.0)
         a2 = NormalizedAngle.fromRadians(1.0)
@@ -22,7 +23,7 @@ class NormalizedAngleTestCase(unittest.TestCase):
         a = NormalizedAngle(LonLat.fromDegrees(45, 0), LonLat.fromDegrees(90, 0))
         self.assertAlmostEqual(a.asDegrees(), 45.0, places=13)
         a = NormalizedAngle(UnitVector3d.Y(), UnitVector3d.Z())
-        self.assertAlmostEqual(a.asDegrees(), 90.0, places=13)        
+        self.assertAlmostEqual(a.asDegrees(), 90.0, places=13)
 
     def testComparisonOperators(self):
         a1 = NormalizedAngle(1)
@@ -53,6 +54,7 @@ class NormalizedAngleTestCase(unittest.TestCase):
 
 def suite():
     return unittest.makeSuite(NormalizedAngleTestCase)
+
 
 def run(shouldExit=False):
     status = 0 if unittest.TextTestRunner().run(suite()).wasSuccessful() else 1

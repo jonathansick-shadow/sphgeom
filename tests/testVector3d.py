@@ -8,6 +8,7 @@ from lsst.sphgeom import Angle, UnitVector3d, Vector3d
 
 
 class Vector3dTestCase(unittest.TestCase):
+
     def testConstruction(self):
         v = Vector3d(1, 2, 3)
         self.assertEqual(v.x(), 1)
@@ -83,6 +84,7 @@ class Vector3dTestCase(unittest.TestCase):
 
 def suite():
     return unittest.makeSuite(Vector3dTestCase)
+
 
 def run(shouldExit=False):
     status = 0 if unittest.TextTestRunner().run(suite()).wasSuccessful() else 1

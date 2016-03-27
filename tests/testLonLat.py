@@ -7,6 +7,7 @@ from lsst.sphgeom import Angle, LonLat, NormalizedAngle, UnitVector3d
 
 
 class LonLatTestCase(unittest.TestCase):
+
     def testConstruction(self):
         p = LonLat.fromDegrees(45, 45)
         self.assertEqual(p, LonLat(NormalizedAngle.fromDegrees(45),
@@ -29,6 +30,7 @@ class LonLatTestCase(unittest.TestCase):
 
 def suite():
     return unittest.makeSuite(LonLatTestCase)
+
 
 def run(shouldExit=False):
     status = 0 if unittest.TextTestRunner().run(suite()).wasSuccessful() else 1

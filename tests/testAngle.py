@@ -7,6 +7,7 @@ from lsst.sphgeom import Angle
 
 
 class AngleTestCase(unittest.TestCase):
+
     def testConstruction(self):
         a1 = Angle(1.0)
         a2 = Angle.fromRadians(1.0)
@@ -46,6 +47,7 @@ class AngleTestCase(unittest.TestCase):
 
 def suite():
     return unittest.makeSuite(AngleTestCase)
+
 
 def run(shouldExit=False):
     status = 0 if unittest.TextTestRunner().run(suite()).wasSuccessful() else 1

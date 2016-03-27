@@ -9,6 +9,7 @@ from lsst.sphgeom import (Angle, AngleInterval,
 
 
 class IntervalTestCase(unittest.TestCase):
+
     def testConstruction(self):
         i = self.Interval(self.Scalar(1))
         self.assertEqual(i.getA(), i.getB())
@@ -70,6 +71,7 @@ class IntervalTestCase(unittest.TestCase):
 
 
 class AngleIntervalTestCase(IntervalTestCase):
+
     def setUp(self):
         self.Interval = AngleInterval
         self.Scalar = Angle
@@ -82,6 +84,7 @@ class AngleIntervalTestCase(IntervalTestCase):
 
 
 class NormalizedAngleIntervalTestCase(IntervalTestCase):
+
     def setUp(self):
         self.Interval = NormalizedAngleInterval
         self.Scalar = NormalizedAngle
@@ -96,6 +99,7 @@ class NormalizedAngleIntervalTestCase(IntervalTestCase):
 def suite():
     return unittest.TestSuite(map(unittest.makeSuite, [
         AngleIntervalTestCase, NormalizedAngleIntervalTestCase]))
+
 
 def run(shouldExit=False):
     status = 0 if unittest.TextTestRunner().run(suite()).wasSuccessful() else 1

@@ -7,6 +7,7 @@ from lsst.sphgeom import ConvexPolygon, Region, UnitVector3d, CONTAINS
 
 
 class ConvexPolygonTestCase(unittest.TestCase):
+
     def testConstruction(self):
         points = [UnitVector3d.Z(), UnitVector3d.X(), UnitVector3d.Y()]
         p1 = ConvexPolygon(points)
@@ -30,13 +31,14 @@ class ConvexPolygonTestCase(unittest.TestCase):
     def testString(self):
         p = ConvexPolygon([UnitVector3d.Z(), UnitVector3d.X(), UnitVector3d.Y()])
         self.assertEqual(str(p), '{"ConvexPolygon": [[0, 0, 1], [1, 0, 0], [0, 1, 0]]}')
-        self.assertEqual(repr(p),"ConvexPolygon([UnitVector3d(0.0, 0.0, 1.0), "
-                                                 "UnitVector3d(1.0, 0.0, 0.0), "
-                                                 "UnitVector3d(0.0, 1.0, 0.0)])")
+        self.assertEqual(repr(p), "ConvexPolygon([UnitVector3d(0.0, 0.0, 1.0), "
+                         "UnitVector3d(1.0, 0.0, 0.0), "
+                         "UnitVector3d(0.0, 1.0, 0.0)])")
 
 
 def suite():
     return unittest.makeSuite(ConvexPolygonTestCase)
+
 
 def run(shouldExit=False):
     status = 0 if unittest.TextTestRunner().run(suite()).wasSuccessful() else 1
